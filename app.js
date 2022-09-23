@@ -3,12 +3,14 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 const path = require('path')
+const cors = require('cors')
 
 // <<<<<<<<<<<< DB >>>>>>>
 require('./config/db')
 
 app.use(express.json({ limit: 1000000000 }))
 app.use(express.urlencoded({ extended: false, limit: 1000000000 }))
+app.use(cors())
 
 // <<<<<<<<<<<<<<< SWAGGER >>>>>>>>>>>>>>>>>
 const swaggerUi = require('swagger-ui-express')
