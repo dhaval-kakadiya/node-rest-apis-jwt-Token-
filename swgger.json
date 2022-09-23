@@ -1,0 +1,916 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "New Node Crud -Customer_Product",
+    "contact": {}
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Registration",
+        "tags": [
+          "Login And Registretion"
+        ],
+        "operationId": "Registration",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegistrationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Login Admin",
+        "tags": [
+          "Login And Registretion"
+        ],
+        "operationId": "LoginAdmin",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginAdminRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "Read User",
+        "tags": [
+          "User Crud"
+        ],
+        "operationId": "ReadUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "summary": "Read User By ID",
+        "tags": [
+          "User Crud"
+        ],
+        "operationId": "ReadUserByID",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update User",
+        "tags": [
+          "User Crud"
+        ],
+        "operationId": "UpdateUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete User",
+        "tags": [
+          "User Crud"
+        ],
+        "operationId": "DeleteUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/category": {
+      "post": {
+        "summary": "Add Category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "AddCategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddCategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Read All Category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ReadAllCategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product": {
+      "post": {
+        "summary": "Add Product",
+        "tags": [
+          "Product Crud"
+        ],
+        "operationId": "AddProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddProductRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Product",
+        "tags": [
+          "Product Crud"
+        ],
+        "operationId": "GetProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "summary": "Get Product By ID",
+        "tags": [
+          "Product Crud"
+        ],
+        "operationId": "GetProductByID",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update Product",
+        "tags": [
+          "Product Crud"
+        ],
+        "operationId": "UpdateProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateProductRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Product",
+        "tags": [
+          "Product Crud"
+        ],
+        "operationId": "DeleteProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customer": {
+      "get": {
+        "summary": "Get Customer",
+        "tags": [
+          "Customer Crud"
+        ],
+        "operationId": "GetCustomer",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customer/{id}": {
+      "get": {
+        "summary": "Get Customer By ID",
+        "tags": [
+          "Customer Crud"
+        ],
+        "operationId": "GetCustomerByID",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID Of product to Find",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update Customer",
+        "tags": [
+          "Customer Crud"
+        ],
+        "operationId": "UpdateCustomer",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateCustomerRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/multerimg": {
+      "post": {
+        "summary": "image Upload Multer",
+        "tags": [
+          "Multer Uploading"
+        ],
+        "operationId": "imageUploadMulter",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "image",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/multerresume": {
+      "post": {
+        "summary": "Resume Upload  Multer",
+        "tags": [
+          "Multer Uploading"
+        ],
+        "operationId": "ResumeUploadMulter",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pdf",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/multeraudio": {
+      "post": {
+        "summary": "Audio Upload Multer",
+        "tags": [
+          "Multer Uploading"
+        ],
+        "operationId": "AudioUploadMulter",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "audio",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegistrationRequest": {
+      "title": "RegistrationRequest",
+      "example": {
+        "first_name": "d",
+        "last_name": "bilzerian",
+        "phone": 125444,
+        "email": "den@gmail.com",
+        "password": "01010101"
+      },
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "phone",
+        "email",
+        "password"
+      ]
+    },
+    "LoginAdminRequest": {
+      "title": "LoginAdminRequest",
+      "example": {
+        "email": "admin@gmail.com",
+        "password": "1452145"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "LoginUserRequest": {
+      "title": "LoginUserRequest",
+      "example": {
+        "email": "john@gmail.com",
+        "password": "14545"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "UpdateUserRequest": {
+      "title": "UpdateUserRequest",
+      "example": {
+        "first_name": "deepak",
+        "last_name": "nahak",
+        "email": "deepak@gmail.com"
+      },
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email"
+      ]
+    },
+    "AddCategoryRequest": {
+      "title": "AddCategoryRequest",
+      "example": {
+        "category_name": "Woman"
+      },
+      "type": "object",
+      "properties": {
+        "category_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category_name"
+      ]
+    },
+    "AddProductRequest": {
+      "title": "AddProductRequest",
+      "example": {
+        "product_name": "Jecket",
+        "price": 7000,
+        "product_detail": "Denim Men Jecket",
+        "categoryId": "6325b91f14f7e34699c1c38c"
+      },
+      "type": "object",
+      "properties": {
+        "product_name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "product_detail": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "product_name",
+        "price",
+        "product_detail",
+        "categoryId"
+      ]
+    },
+    "UpdateProductRequest": {
+      "title": "UpdateProductRequest",
+      "example": {
+        "price": 1400
+      },
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "price"
+      ]
+    },
+    "AddCustomerRequest": {
+      "title": "AddCustomerRequest",
+      "example": {
+        "customer_name": "dax",
+        "product_id": "6325ddd28455376cc882d609"
+      },
+      "type": "object",
+      "properties": {
+        "customer_name": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_name",
+        "product_id"
+      ]
+    },
+    "UpdateCustomerRequest": {
+      "title": "UpdateCustomerRequest",
+      "example": {
+        "customer_name": "dhaval"
+      },
+      "type": "object",
+      "properties": {
+        "customer_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_name"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Login And Registretion"
+    },
+    {
+      "name": "User Crud"
+    },
+    {
+      "name": "Category"
+    },
+    {
+      "name": "Product Crud"
+    },
+    {
+      "name": "Customer Crud"
+    },
+    {
+      "name": "Multer Uploading"
+    }
+  ]
+}
