@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:false,limit : 1000000000}));
 
 // <<<<<<<<<<<<<<< SWAGGER >>>>>>>>>>>>>>>>>
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swgger.json');
+const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
