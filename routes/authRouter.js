@@ -1,19 +1,17 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
+const userAuth = require('../middleware/jwtAuth')
 
-const userAuth = require('../middleware/jwtAuth');
-
-const use = (roles) => (req,res,next) => {
-    Promise.resolve( roles(req,res,next).catch( error => {
-        next(error)
-    }))
+const use = (roles) => (req, res, next) => {
+  Promise.resolve(roles(req, res, next).catch(error => {
+    next(error)
+  }))
 }
 
-const{login , registration } = require('../controllers/authController')
+const { login, registration } = require('../controllers/authController')
 
-router.post('/login',login)
-router.post('/registration',userAuth(['admin']),use(registration))
+router.post('/login', login)
+router.post('/registration', userAuth(['admin']), use(registration))
 
-
-module.exports = router;
+module.exports = router
