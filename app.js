@@ -24,12 +24,8 @@ const router = require('./routes/index')
 const adminSeed = require('./seeder/seed');
 
 
-// <<<<<<<<<< ACCESS STATIC PAGE >>>>>>>>>> 
-app.use(express.static(path.join(__dirname,'public','audio')));
-app.use(express.static(path.join(__dirname,'public','pdf')));
-app.use(express.static(path.join(__dirname,'public','images')));
-// app.use(express.static(path.join(__dirname,'resume')));
-
+// <<<<<<<<<< ACCESS STATIC PAGE >>>>>>>>>>
+app.use(express.static(path.join(__dirname,'public')))
 
 app.use('/api',router);
 
