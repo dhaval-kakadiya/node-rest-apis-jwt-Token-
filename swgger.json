@@ -5,7 +5,7 @@
     "title": "New Node Crud -Customer_Product",
     "contact": {}
   },
-  "host": "localhost:5000",
+  "host": "node-project-dhaval.herokuapp.com",
   "basePath": "/api",
   "securityDefinitions": {},
   "schemes": [
