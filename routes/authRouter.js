@@ -10,8 +10,9 @@ const use = (roles) => (req, res, next) => {
 }
 
 const { login, registration } = require('../controllers/authController')
-
+// router.get('/login', )
 router.post('/login', login)
+// router.get('/register', )
 router.post('/registration', userAuth(['admin']), use(registration))
 
 module.exports = router
