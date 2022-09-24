@@ -22,9 +22,9 @@ router.post('/upload-resume', uploadUserResume)
 router.post('/upload-image', uploadUserImage)
 
 // <<<<<<<<<<< MAIN GET-PUT-DELETE ROUTES WITH AUTHENTICATE >>>>>>>>>>>>>>>>
-router.get('/', userAuth(['user', 'admin']), use(getUser))
-router.get('/:id', userAuth(['user', 'admin']), getUserById)
-router.put('/:id', userAuth(['admin']), updateUser)
-router.delete('/:id', userAuth(['admin']), deleteUser)
+router.get('/', getUser)
+router.get('/:id', getUserById)
+router.put('/:id', updateUser)
+router.delete('/:id', deleteUser)
 
 module.exports = router
