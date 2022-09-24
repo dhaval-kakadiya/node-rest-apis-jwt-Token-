@@ -18,7 +18,7 @@
     "application/json"
   ],
   "paths": {
-    "/register": {
+    "/registration": {
       "post": {
         "summary": "Registration",
         "tags": [
