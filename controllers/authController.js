@@ -19,6 +19,7 @@ exports.registration = async (req, res) => {
       data: userData
     })
   } catch (error) {
+    console.log(error);
     res.status(500).json({
       success: false,
       message: 'User Not Register'
