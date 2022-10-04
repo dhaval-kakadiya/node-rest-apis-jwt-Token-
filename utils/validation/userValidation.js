@@ -14,7 +14,7 @@ const userSchema = Joi.object({
   email: Joi.string().email().required().empty().trim().messages({
     'string.empty': 'Email must be required.',
     'any.required': 'Email must be required.',
-    'string.email': 'Invalid email address.'
+    'string.email': 'Invalid email address.',
   }),
   password: Joi.string().required().min(6).trim().messages({
     'string.empty': 'Password must be required.',

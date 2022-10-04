@@ -13,6 +13,6 @@ const { login, registration } = require('../controllers/authController')
 // router.get('/login', )
 router.post('/login', login)
 // router.get('/register', )
-router.post('/registration', use(registration))
+router.post('/registration', registration)
 
 module.exports = router
