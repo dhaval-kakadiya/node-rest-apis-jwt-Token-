@@ -107,7 +107,7 @@ exports.uploadUserImage = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: 'file uploaded successfully !',
-      image: `http://localhost:3000/${fileName}`
+      image: `/images/${fileName}`
     })
   } else {
     return res.status(404).json({
@@ -119,7 +119,7 @@ exports.uploadUserImage = async (req, res) => {
 
 const imagePath = () => {
   const workingDir = process.cwd()
-  const imagePath = path.join(workingDir, 'images')
+  const imagePath = path.join(workingDir, '/public/images')
   return imagePath
 }
 
@@ -159,7 +159,7 @@ exports.uploadUserResume = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: 'file uploaded successfully !',
-      image: `http://localhost:3000/${fileName}`
+      image: `/resume/${fileName}`
     })
   } else {
     return res.status(404).json({
@@ -171,7 +171,7 @@ exports.uploadUserResume = async (req, res) => {
 
 const resumePath = () => {
   const workingDir = process.cwd()
-  const resumePath = path.join(workingDir, 'resume')
+  const resumePath = path.join(workingDir, '/public/resume')
   return resumePath
 }
 
@@ -201,7 +201,7 @@ exports.multerImg = async (req, res) => {
       success: true,
       message: 'Successfull Image Uploaded',
       Data: multerUser,
-      image: `http://localhost:3000//images/${filename}`
+      image: `/images/${filename}`
     })
   } catch (error) {
     return res.status(422).json({
@@ -235,7 +235,7 @@ exports.multerResume = async (req, res) => {
       success: true,
       message: 'Successfull Resume Uploaded',
       Data: multerUser,
-      Resume: `http://localhost:3000//pdf/${filename}`
+      Resume: `/pdf/${filename}`
     })
   } catch (error) {
     return res.status(422).json({
@@ -270,7 +270,7 @@ exports.multerAudio = async (req, res) => {
       success: true,
       message: 'Successfull Resume Uploaded',
       Data: multerUser,
-      Resume: `http://localhost:3000/audio/${filename} `
+      Resume: `/audio/${filename} `
     })
   } catch (error) {
     return res.status(422).json({
