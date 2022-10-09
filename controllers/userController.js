@@ -201,7 +201,7 @@ exports.multerImg = async (req, res) => {
       success: true,
       message: 'Successfull Image Uploaded',
       Data: multerUser,
-      image: `http://localhost:3000/${filename}`
+      image: `http://localhost:3000//images/${filename}`
     })
   } catch (error) {
     return res.status(422).json({
@@ -235,7 +235,7 @@ exports.multerResume = async (req, res) => {
       success: true,
       message: 'Successfull Resume Uploaded',
       Data: multerUser,
-      Resume: `http://localhost:3000/${filename}`
+      Resume: `http://localhost:3000//pdf/${filename}`
     })
   } catch (error) {
     return res.status(422).json({
@@ -270,7 +270,7 @@ exports.multerAudio = async (req, res) => {
       success: true,
       message: 'Successfull Resume Uploaded',
       Data: multerUser,
-      Resume: `http://localhost:3000/${filename} `
+      Resume: `http://localhost:3000/audio/${filename} `
     })
   } catch (error) {
     return res.status(422).json({
